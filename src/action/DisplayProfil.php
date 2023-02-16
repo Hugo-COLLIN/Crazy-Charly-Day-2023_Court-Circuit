@@ -15,7 +15,10 @@ class DisplayProfil extends Action
         $stmt->bindParam(1, $usr_id);
         $stmt->execute();
         $profil = $stmt->fetch();
-        $res = <<<HTML
+        if (!$profil)
+            $res = "";
+        else {
+            $res = <<<HTML
              <main class="main-profil">
                 <div class="group-profil">
                     <div class="profil-entete">
@@ -35,6 +38,7 @@ class DisplayProfil extends Action
                 </div>
              </main>
              HTML;
+        }
         return $res;
     }
 }

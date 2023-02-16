@@ -27,6 +27,11 @@ class Auth {
             $query->bindParam(1, $email);
             $query->bindParam(2, $hash);
             $query->execute();
+            $req = $bd->prepare("select id from userccd where login = '$email'");
+            $req->execute();
+            $user_id = $req->fetch()[1];
+            $query = $bd->prepare("insert into profil values ($user_id, 'nom','prenom', 'pseudo')");
+            $query->execute();
         }
         return true;
     }
