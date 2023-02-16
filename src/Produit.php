@@ -25,7 +25,14 @@ class Produit
         $res .= "</p><p>description : " . $row[5] . "</p><p>Detail : " . $row[6] . "</div></p><p>Lieux de production : " . $row[7] . "</p><p>Distance de Nancy : " . $row[8] . "km   coordonnees : ".$row[9]." ".$row[10]."</div>";
 
         $res .= '<br><div class="immage-produit"><img src="img/'.$row[11].'"></div></br>';
-        $res .= "ajouter au panier";
+        $res .= '<button onclick="ajouter()" type="submit">ajouter au panier</button>';
+        $res .= '<script>
+        function ajouter() {
+        let cookie = document.cookie.split(";")[0].split("=")[1];
+        alert(cookie);
+        document.cookie = "panier="+cookie+",'.$id.':1";
+        }
+        </script>';
         $res .= "
         <form method='post' action='?action=ajout-comm&id=" . $id . "' class='comment-form'>
         <h2>Note</h2>

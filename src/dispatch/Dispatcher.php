@@ -7,6 +7,7 @@ use iutnc\ccd\action\AddUserAction;
 use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\action\LogoutAction;
 use iutnc\ccd\action\SigninAction;
+use iutnc\ccd\action\FiltrerCatalogueAction;
 use iutnc\ccd\Header\Header;
 
 class Dispatcher {
@@ -50,6 +51,9 @@ class Dispatcher {
                 break;
             case "produit":
                 $action = new SelectionProduitAction($_GET['id']);
+                break;
+            case "filtrer-catalogue" :
+                $action = new FiltrerCatalogueAction();
                 break;/*
             case "continuerSerie":
                 $action = new SelectionSerieAction($_GET['id']);

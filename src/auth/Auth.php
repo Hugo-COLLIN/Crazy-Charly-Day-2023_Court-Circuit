@@ -59,6 +59,9 @@ class Auth {
             $_SESSION['id'] = $row[0];
             $connection = true;
         }
+        if ($connection) {
+            setcookie("panier", "test:0");
+        }
         return $connection;
     }
 }
