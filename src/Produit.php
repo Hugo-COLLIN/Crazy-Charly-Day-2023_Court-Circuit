@@ -52,7 +52,7 @@ class Produit
         $res .= '<script>
         function ajouter() {
         let a = document.getElementsByClassName("qte")
-        let cookie = document.cookie.split(";")[0].split("=")[1];
+        let cookie = document.cookie.split(";")[2].split("=")[1];
         document.cookie = "panier="+cookie+",'.$id.':"+a[0].value;
         }
         </script>';
