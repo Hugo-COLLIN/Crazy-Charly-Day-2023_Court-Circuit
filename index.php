@@ -2,9 +2,9 @@
 
 require_once "vendor/autoload.php";
 
-use iutnc\sae\action\ListeAction;
-use iutnc\sae\db\ConnectionFactory;
-use iutnc\sae\dispatch\Dispatcher;
+//use iutnc\sae\action\ListeAction;
+use iutnc\ccd\db\ConnectionFactory;
+//use iutnc\sae\dispatch\Dispatcher;
 
 session_start();
 ConnectionFactory::setConfig("DBConfig.ini");
