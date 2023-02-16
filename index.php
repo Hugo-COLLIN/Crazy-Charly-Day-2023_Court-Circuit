@@ -2,9 +2,9 @@
 
 require_once "vendor/autoload.php";
 
-//use iutnc\sae\action\ListeAction;
+use iutnc\ccd\action\ListeAction;
 use iutnc\ccd\db\ConnectionFactory;
-//use iutnc\sae\dispatch\Dispatcher;
+use iutnc\ccd\dispatch\Dispatcher;
 
 session_start();
 ConnectionFactory::setConfig("DBConfig.ini");
@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
                 <a id="title" href=""> </a>
                 <div class="main">
                     <a href="?action=logout">Se déconnecter</a>
-                    <a href="?action=catalogue">click and collact</a>
+                    <a href="?action=catalogue">click and collect</a>
                     <a href="?action=profil">Mon compte</a>
                 </div>
             </div>

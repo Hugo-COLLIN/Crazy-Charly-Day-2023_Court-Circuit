@@ -54,25 +54,11 @@ class Auth {
             $hash = $data['mdp'];
             if (!password_verify($passwd2check, $hash)) {return false;}
             $_SESSION['user'] = serialize(new User($email, $passwd2check));
-            $rep = $bd->query("select idUser from userccd where login = '$email' ");
+            $rep = $bd->query("select id from userccd where login = '$email' ");
             $row = $rep->fetch();
             $_SESSION['id'] = $row[0];
             $connection = true;
         }
         return $connection;
-    }
-
-    public static function isActivate(string $email): bool {
-        $bd = ConnectionFactory::makeConnection();
-        $query = $bd->prepare("select * from userccd where login = ? ");
-        $query->bindParam(1, $email);
-        $query->execute();
-        $data = $query->fetch(PDO::FETCH_ASSOC);
-        if ($data) {
-            return ($data['active'] == 1);
-        }
-        else {
-            throw new EmailNonExistsException("Email non existant");
-        }
     }
 }
