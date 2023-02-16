@@ -3,7 +3,7 @@
 namespace iutnc\ccd\action;
 
 use iutnc\ccd\db\ConnectionFactory;
-use iutnc\ccd\Header\Header;
+use iutnc\ccd\Header\Html;
 
 class CatalogueAction extends Action {
 
@@ -12,7 +12,7 @@ class CatalogueAction extends Action {
         $bd = ConnectionFactory::makeConnection();
         $rep = $bd->query("select * from produit");
         $res.= <<<END
-            <main>
+            <main class="main-catalogue">
                 <div class="search-group-catalogue">
                     <form action="?action=catalogue" method="post" class="search-form">
                         <input name="chaine" placeholder="Recherchez un article">
@@ -31,7 +31,7 @@ class CatalogueAction extends Action {
                     <option value="Wiwersheim">Wiwersheim</option>
                     <option value="Pont à Mousson">Pont à Mousson</option>
                     <option value="Chauny">Chauny</option>
-                    <option value="Annecy">Annecy
+                    <option value="Annecy">Annecy</option>
                     <option value="Les Pennes-Mirabeau">Les Pennes-Mirabeau</option>
                     <option value="Leyr">Leyr</option>
                     <option value="Sarralbe">Sarralbe</option>
@@ -46,7 +46,7 @@ class CatalogueAction extends Action {
                     <option value="Cosmétiques">Cosmétiques</option>
                     <option value="Produits frais">Produits frais</option>
                 </select>
-                <input type='submit' value='filtrer'>
+                <button type='submit'>Filtrer</button>
             </form>
                 </div>
             END;
