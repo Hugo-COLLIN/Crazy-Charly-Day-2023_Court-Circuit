@@ -38,7 +38,7 @@ class Auth {
         $special = preg_match("#\W#", $passwd);
         $lower = preg_match("#[a-z]#", $passwd);
         $upper = preg_match("#[A-Z]#", $passwd);
-        if (! ($digit && $special && $lower && $upper)) throw new NotStrengthPassWord("le mot de passe n'est pas asses protoge");
+        if (! ($digit && $special && $lower && $upper)) throw new NotStrengthPassWord("le mot de passe n'est pas asses protoge: Doit contenir une Majuscule, une minuscule, un chiffre et un caractere speciale");
         return true;
     }
 

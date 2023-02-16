@@ -27,12 +27,12 @@ class Dispatcher {
             <html lang="fr">
                 <head>
                     <meta charset="utf-8">
-                    <title>NetVOD</title>
+                    <title>Court Circuit</title>
                     <link rel="stylesheet" type="text/css" href="style.css">
                 </head>
                 <body>
                     <div class="header">
-                        <a id="title" href="index.php">NetVOD</a>
+                        <a id="title" href="index.php">Court Circuit</a>
                     </div>
                     $html
                 </body>
