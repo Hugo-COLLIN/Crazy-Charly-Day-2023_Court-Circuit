@@ -9,8 +9,7 @@ class CatalogueAction extends Action {
 
     public function execute(): string{
         $res = "";
-        $bd = ConnectionFactory::makeConnection();
-        $rep = $bd->query("select * from produit");
+
         $res.= <<<END
             <main class="main-catalogue">
                 <div class="search-group-catalogue">
@@ -50,9 +49,24 @@ class CatalogueAction extends Action {
             </form>
                 </div>
             END;
-        $res.= '<div class="group-produit-catalogue">';
+        $res .= $this->divideBy5();
+        return $res;
+    }
+
+    public function divideBy5() : String
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $rep = $bd->query("select * from produit");
+        $res = '<div class="group-button-produit-catalogue">';
+        $count = $rep->rowCount();
+        $res .= '<div class="catalogue-page">';
+        foreach (range(1, ceil($count / 5)) as $page) {
+            $res .= "<button class='catalogue-page-button' '>$page</button>";
+        }
+        $res .= '</div>';
+        $res .= '<div class="group-produit-catalogue">';
         while ($row = $rep->fetch()){
-             $res.="<div class='item-produit-catalogue'>
+            $res.="<div class='item-produit-catalogue'>
                         <div class='img-item-catalogue'>
                             <a href=?action=produit&id=".$row[0].">
                                 <img class='img-produit' src='image/$row[11]'>
@@ -64,8 +78,8 @@ class CatalogueAction extends Action {
                         </a>
                     </div>";
         }
-        return $res."</div></main>";
-    }
 
+        return $res."</div></div></main>";
+    }
 
 }

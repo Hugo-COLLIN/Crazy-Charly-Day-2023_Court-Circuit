@@ -15,6 +15,7 @@ class Html
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
         <script src="js/bootstrap.min.js" defer></script>
+        <script src="script.js" defer></script>
         </head>
         <body>';
     }
