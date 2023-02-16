@@ -182,7 +182,8 @@ body
     display: block;
 }
 
-.item-commande
+.item-commande,
+.item-utilisateur
 {
     background-color: #252523;
     color: white;

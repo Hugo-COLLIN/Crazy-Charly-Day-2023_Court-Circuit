@@ -3,6 +3,7 @@
 namespace iutnc\ccd\dispatch;
 
 use iutnc\ccd\action\ListeCommandesAction;
+use iutnc\ccd\action\ListeUtilisateursAction;
 use iutnc\ccd\action\PanierAction;
 use iutnc\ccd\action\SelectionProduitAction;
 use iutnc\ccd\action\AddUserAction;
@@ -53,6 +54,9 @@ class Dispatcher {
                 break;
             case "listeCommandes":
                 $action = new ListeCommandesAction();
+                break;
+            case "listeUtilisateurs":
+                $action = new ListeUtilisateursAction();
                 break;
                 /*
             case "continuerSerie":

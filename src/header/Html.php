@@ -40,6 +40,12 @@ class Html
                         <div class="nav-acceuil-item-catalogue">
                             <a href="" title="Panier"><span class="material-symbols-rounded">shopping_cart</span></a>
                         </div>
+                        <div class="nav-acceuil-item-listeCommandes">
+                            <a href="?action=listeCommandes" title="Liste des commandes (Administrateur)"><span class="material-symbols-rounded">order_approve</span></a>
+                        </div>
+                        <div class="nav-acceuil-item-listeUtilisateurs">
+                            <a href="?action=listeUtilisateurs" title="Liste des utilisateurs (Administrateur)"><span class="material-symbols-rounded">group</span></a>
+                        </div>
                         <div class="nav-acceuil-item-account">
                             <a href="?action=profil" title="Mon compte"><span class="material-symbols-rounded">account_box</span></a>
                         </div>
