@@ -38,8 +38,16 @@ class FiltrerCatalogueAction extends Action{
                 $stmt -> bindParam(1,$lieu);
                 $stmt -> bindParam(2,$categorie);
                 $stmt -> execute();
-                 $res.= '<main class="main-catalogue"><div class="group-produit-catalogue">';
-                while ($row = $stmt->fetch()){
+                $res.= '<main class="main-catalogue">';
+                $rep = $bd->query("select * from produit");
+                $res .= '<div class="group-button-produit-catalogue">';
+                $count = $rep->rowCount();
+                $res .= '<div class="catalogue-page">';
+                foreach (range(1, ceil($count / 5)) as $page) {
+                    $res .= "<button class='catalogue-page-button' '>$page</button>";
+                }
+                $res .= '</div>';
+                $res .= '<div class="group-produit-catalogue">';                while ($row = $stmt->fetch()){
                     $res.="<div class='item-produit-catalogue'>
                            <div class='img-item-catalogue'>
                                <a href=?action=produit&id=".$row[0].">
