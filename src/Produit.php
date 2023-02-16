@@ -24,12 +24,24 @@ class Produit
         }
         $res .= "</p><p>description : " . $row[5] . "</p><p>Detail : " . $row[6] . "</div></p><p>Lieux de production : " . $row[7] . "</p><p>Distance de Nancy : " . $row[8] . "km   coordonnees : ".$row[9]." ".$row[10]."</div>";
 
-        $res .= '<br><div class="immage-produit"><img src="img/'.$row[11].'"></div></br>';
-        $res .= '<button onclick="ajouter()" type="submit">ajouter au panier</button>';
+        $res .= '<br><div class="immage-produit"><img src="image/'.$row[11].'"></div></br>';
+        $res .='<button onclick="ajouter()" type="submit">ajouter au panier</button>';
+        if ($row[4] == 0){
+            $res .= ' <input type=number step=0.01 class="qte"/> Step 0.01<br />';
+        }else{
+            $res .="
+        <select name='qte' class='qte'>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option></select>";
+        }
         $res .= '<script>
         function ajouter() {
+        let a = document.getElementsByClassName("qte")
         let cookie = document.cookie.split(";")[0].split("=")[1];
-        document.cookie = "panier="+cookie+",'.$id.':1";
+        document.cookie = "panier="+cookie+",'.$id.':"+a[0].value;
         }
         </script>';
         $res .= "
