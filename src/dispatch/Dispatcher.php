@@ -9,6 +9,8 @@ use iutnc\ccd\action\AddUserAction;
 use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\action\LogoutAction;
 use iutnc\ccd\action\SigninAction;
+use iutnc\ccd\action\CatalogueSearchAction;
+use iutnc\ccd\action\CatalogueExecuteSearch;
 use iutnc\ccd\action\FiltrerCatalogueAction;
 use iutnc\ccd\Header\Header;
 
@@ -35,13 +37,12 @@ class Dispatcher {
                 $action = new LogoutAction();
                 break;
             case "catalogue":
-                /*$classeTemp = new CatalogueSearchAction();
+                $classeTemp = new CatalogueSearchAction();
                 if(!isset($_POST['chaine'])){
                     $_POST['chaine'] =  "";
                 }
                 $action = new CatalogueExecuteSearch($classeTemp, filter_var($_POST['chaine'], FILTER_SANITIZE_STRING));
-                $_POST['chaine'] =  "";*/
-                $action = new CatalogueAction();
+                $_POST['chaine'] =  "";
                 break;
             case "produit":
                 $action = new SelectionProduitAction($_GET['id']);
