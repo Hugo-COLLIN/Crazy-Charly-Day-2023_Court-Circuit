@@ -1,3 +1,4 @@
+@import "reset.css";
 body
 {
     background-color: #252523;
@@ -45,7 +46,7 @@ body
     color: white;
     text-decoration: none;
     font-size: 0.8rem;
-    margin: 0 1rem;
+    padding-left: 1rem;
 }
 
 /**
@@ -74,7 +75,7 @@ body
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 2px 2px 10px -5px black;
-    max-width: 16rem;
+    max-width: 18rem;
 }
 
 .main-catalogue .search-group-catalogue .material-symbols-rounded {
@@ -376,6 +377,56 @@ main .double-form-sous-item input:focus {
 main .double-form-sous-item input {
     width: 98%;
     padding: 1rem 1rem 1rem calc(1rem * 3.6);
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: rgba(141, 141, 141, 0.6);
+    text-align: left;
+    color: black;
+    transition: background-color 0.5s;
+    animation: ease 0.5s growUp;
+}
+
+.produit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    padding: 1rem;
+    border-bottom: black 1px solid;
+}
+
+.produit .img-produit img {
+    width: 15em;
+    height: 15em;
+}
+
+.produit .info-produit {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 10em;
+    border-bottom: none;
+    padding: 1em 1em 0em 1em;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px -5px 10px -5px black;
+    align-items: normal;
+}
+
+.produit .info-produit #prix {
+    display: block;
+}
+
+.produit .info-produit span {
+    color: black;
+}
+
+.produit .info-produit span:hover {
+    cursor: pointer;
+}
+
+.produit .info-produit input {
+    width: 20%;
+    padding: 0.4em 0.4em 0.4em calc(1em * 3.6);
     border-radius: 50px;
     border: none;
     outline: none;
