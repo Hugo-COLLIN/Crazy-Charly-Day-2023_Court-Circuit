@@ -39,7 +39,7 @@ class Html
                             <a href="?action=catalogue" title="Click & collect"><span class="material-symbols-rounded">store</span></a>
                         </div>
                         <div class="nav-acceuil-item-catalogue">
-                            <a href="" title="Panier"><span class="material-symbols-rounded">shopping_cart</span></a>
+                            <a href="?action=panier" title="Panier"><span class="material-symbols-rounded">shopping_cart</span></a>
                         </div>
                         <div class="nav-acceuil-item-listeCommandes">
                             <a href="?action=listeCommandes" title="Liste des commandes (Administrateur)"><span class="material-symbols-rounded">order_approve</span></a>

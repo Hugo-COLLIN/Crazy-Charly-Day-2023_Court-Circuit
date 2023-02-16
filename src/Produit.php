@@ -27,7 +27,7 @@ class Produit
         $res .= '<br><div class="immage-produit"><img src="image/'.$row[11].'"></div></br>';
         $res .='<button onclick="ajouter()" type="submit">ajouter au panier</button>';
         if ($row[4] == 0){
-            $res .= ' <input type=number step=0.01 class="qte"/> Step 0.01<br />';
+            $res .= ' <input type=number min =0.01 step=0.01 class="qte" value="0.01" /> Step 0.01<br />';
         }else{
             $res .="
         <select name='qte' class='qte'>
