@@ -210,8 +210,12 @@ body
     display: block;
 }
 
+/**
+    * Commande
+ */
 .item-commande,
-.item-utilisateur
+.item-utilisateur,
+.infos-utilisateur
 {
     background-color: #252523;
     color: white;
@@ -239,6 +243,15 @@ body
     height: 10rem;
 }
 
+.infos-utilisateur
+{
+    max-width: 800px;
+    margin: auto;
+}
+
+/**
+    * Sign in
+ */
 main .form-group {
     text-align: center;
     width: 100%;
