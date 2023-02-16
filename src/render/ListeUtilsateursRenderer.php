@@ -10,7 +10,7 @@ class ListeUtilsateursRenderer
     {
         $res = "";
         $res .= "<div class=\"utilisateurs\">";
-        $res .= "<h1>Liste des commandes</h1>";
+        $res .= "<h1>Liste des utilisateurs</h1>";
 
 
         $query = Utilisateur::recupererListe();
