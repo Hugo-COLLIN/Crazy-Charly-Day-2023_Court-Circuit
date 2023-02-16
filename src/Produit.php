@@ -15,19 +15,30 @@ class Produit
         $query->bindParam(1, $id);
         $query->execute();
         $row = $query->fetch();
-        $res .= "<div class=\"description\"><p>". $row[2];
-
         if ($row[4] == 0){
-            $res .= "prix au kilo : " . $row[3];
+            $prix = "Prix au kilo : " . $row[3];
         }else{
-            $res .= "prix : " . $row[3] . " poids :". "$row[4]";
+            $prix = "Prix : " . $row[3] . " poids :". "$row[4]";
         }
-        $res .= "</p><p>description : " . $row[5] . "</p><p>Detail : " . $row[6] . "</div></p><p>Lieux de production : " . $row[7] . "</p><p>Distance de Nancy : " . $row[8] . "km   coordonnees : ".$row[9]." ".$row[10]."</div>";
+        $res = <<<END
+        <div class="produit">
+            <div class="img-produit">
+                <img src="image/{$row['image']}">
+            </div>
+            <div class="info-produit">
+                <h2>{$row['nom']}</h2>
+                <h4>Catégorie du produit : {$row['categorie']}</h4>
+                <h4 id="prix">$prix</h4>
+                <div class="panier">
+                <span class="material-symbols-rounded" onclick="ajouter()" title="Ajouter au panier">add_shopping_cart</span>
+                    
+                
+        END;
 
-        $res .= '<br><div class="immage-produit"><img src="image/'.$row[11].'"></div></br>';
-        $res .='<button onclick="ajouter()" type="submit">ajouter au panier</button>';
+
+
         if ($row[4] == 0){
-            $res .= ' <input type=number min =0.01 step=0.01 class="qte" value="0.01" /> Step 0.01<br />';
+            $res .= ' <input type=number min =0.01 step=0.01 class="qte" value="0.01"/> Step 0.01kg<br />';
         }else{
             $res .="
         <select name='qte' class='qte'>
@@ -37,6 +48,7 @@ class Produit
         <option value='4'>4</option>
         <option value='5'>5</option></select>";
         }
+        $res .= "</div></div></div>";
         $res .= '<script>
         function ajouter() {
         let a = document.getElementsByClassName("qte")
