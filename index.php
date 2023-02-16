@@ -15,7 +15,7 @@ if (isset($_SESSION['user'])) {
         $dispatcher = new Dispatcher();
         $dispatcher->run();
     } else {
-        echo ajouterIndex(Header::afficger());
+        echo Header::afficger();
     }
 }
 //Sinon (s'il n'est pas connecté), on affiche la page qui propose de se connecter ou de créer un compte
@@ -29,23 +29,7 @@ else {
             header("Location:index.php");
         }
     } else {
-        $action = <<<HTML
-            <div class="header">
-                <a id="title" href="">Court-circuit Nancy</a>
-                <div class="main">
-                    <a id="signin" href="?action=signin">Se connecter</a>
-                    <a id="signup" href="?action=add-user">S'inscrire</a>
-                </div>
-            </div>
-HTML;
-        echo ajouterIndex($action);
-    }
-}
-
-//L'affichage principale de l'index
-function ajouterIndex(string $html) : string {
-    $code = <<<HTML
-    <html lang="fr">
+        echo '<html lang="fr">
         <head>
             <meta charset="utf-8">
             <title>Court-circuit Nancy</title>
@@ -54,10 +38,15 @@ function ajouterIndex(string $html) : string {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
         </head>
         <body>
-            $html
+        <div class="header">
+                <a id="title" href="">Court-circuit Nancy</a>
+                <div class="main">
+                    <a id="signin" href="?action=signin">Se connecter</a>
+                    <a id="signup" href="?action=add-user">S'."'".'inscrire</a>
+                </div>
+            </div>
         </body>
         <script src="js/bootstrap.min.js"></script>
-    </html>
-    HTML;
-    return $code;
+    </html>';
+    }
 }

@@ -4,7 +4,17 @@ namespace iutnc\ccd\Header;
 class Header{
 
     public static function afficger() : String{
-        return '<header>
+        return '
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8">
+            <title>Court-circuit Nancy</title>
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
+        </head>
+        <body>
+            <header>
                 <div class="nav-group-acceuil">
                     <div class="group-acceuil-center">
                         <h2 id="page-name">Court-circuit Nancy</h2>
@@ -21,6 +31,9 @@ class Header{
                         </div>
                     </div>
                 </div>
-            </header>';
+            </header>
+        </body>
+        <script src="js/bootstrap.min.js"></script>
+    </html>';
         }
 }
