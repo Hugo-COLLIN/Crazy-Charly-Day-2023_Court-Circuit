@@ -15,7 +15,7 @@ if (isset($_SESSION['user'])) {
         $dispatcher = new Dispatcher();
         $dispatcher->run();
     } else {
-        echo Header::afficger();
+        echo Header::afficher();
     }
 }
 //Sinon (s'il n'est pas connecté), on affiche la page qui propose de se connecter ou de créer un compte

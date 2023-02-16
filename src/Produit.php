@@ -29,7 +29,6 @@ class Produit
         $res .= '<script>
         function ajouter() {
         let cookie = document.cookie.split(";")[0].split("=")[1];
-        alert(cookie);
         document.cookie = "panier="+cookie+",'.$id.':1";
         }
         </script>';

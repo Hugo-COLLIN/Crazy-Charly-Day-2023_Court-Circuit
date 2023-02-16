@@ -2,6 +2,7 @@
 
 namespace iutnc\ccd\dispatch;
 
+use iutnc\ccd\action\PanierAction;
 use iutnc\ccd\action\SelectionProduitAction;
 use iutnc\ccd\action\AddUserAction;
 use iutnc\ccd\action\CatalogueAction;
@@ -15,15 +16,7 @@ class Dispatcher {
     }
 
     private function renderPage(string $html) : void {
-        $res = '
-            <!DOCTYPE html>
-            <html lang="fr">
-                <head>
-                    <meta charset="utf-8">
-                    <title>Court Circuit</title>
-                    <link rel="stylesheet" type="text/css" href="style.css">
-                </head>
-                <body>'. Header::afficger() . $html.'</body>
+        $res = Header::afficher() . $html.'</body>
             </html>';
         echo $res;
     }
@@ -76,6 +69,9 @@ class Dispatcher {
             case "profil":
                 $action = new ModifProfilAction();
                 break;*/
+            case "panier":
+                $action = new PanierAction();
+                break;
             default:
                 echo "mauvaise 'action'";
                 break;

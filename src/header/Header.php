@@ -1,9 +1,9 @@
 <?php
 
-namespace iutnc\ccd\Header;
+namespace iutnc\ccd\header;
 class Header{
 
-    public static function afficger() : String{
+    public static function afficher() : String{
         return '
     <html lang="fr">
         <head>
@@ -12,6 +12,7 @@ class Header{
             <link rel="stylesheet" type="text/css" href="style.css">
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
+        <script src="js/bootstrap.min.js" defer></script>
         </head>
         <body>
             <header>
@@ -21,7 +22,10 @@ class Header{
                     </div>
                     <div class="group-acceuil-right">
                         <div class="nav-acceuil-item-catalogue">
-                            <a href="?action=catalogue" title="Click & collect"><span class="material-symbols-rounded">shopping_cart</span></a>
+                            <a href="?action=panier" title="Click & collect"><span class="material-symbols-rounded">shopping_cart</span></a>
+                        </div>
+                        <div class="nav-acceuil-item-catalogue">
+                            <a href="?action=catalogue" title="Catalogue"><span class="material-symbols-rounded">catalogue</span></a>
                         </div>
                         <div class="nav-acceuil-item-account">
                             <a href="?action=profil" title="Mon compte"><span class="material-symbols-rounded">account_box</span></a>
@@ -31,9 +35,6 @@ class Header{
                         </div>
                     </div>
                 </div>
-            </header>
-        </body>
-        <script src="js/bootstrap.min.js"></script>
-    </html>';
+            </header>';
         }
 }
