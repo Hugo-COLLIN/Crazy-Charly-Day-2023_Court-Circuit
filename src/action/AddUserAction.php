@@ -14,20 +14,40 @@ class AddUserAction extends Action {
         $html = "";
         if($_SERVER['REQUEST_METHOD'] === 'GET') {
             $html = <<<HTML
-            <div class="div-form-log">
-            <form action="?action=${_GET['action']}" method="post" class="log-form">
-                <label>Email: </label><input type="text" name="email" placeholder="toto@gmail.com" required>
-                <label>Password: </label><input type="password" name="password" required>
-                <label>Password: (verification) </label><input type="password" name="password2" required>
-                <button type="submit">Validate</button>
-            </form>
-            </div>
+                    <main class="main-signin">
+                        <div class="form-group">
+                            <div class="title">
+                                <label for="register">S'inscrire</label>
+                            </div>
+                            <form id="creer_user" method="POST" action="?action=add-user">
+                                <div class="form-item">
+                                    <span class="form-item-icon material-symbols-rounded">email</span>
+                                    <input type="email" name="email" placeholder="Entrez un email">
+                                </div>
+                                <br>
+                                <div class="double-form-item">
+                                    <div class="double-form-sous-item">
+                                        <span class="form-item-icon material-symbols-rounded">lock</span>
+                                        <input type="password" name="passwd" placeholder="Entrez un mot de passe">
+                                    </div>
+                                    <div class="double-form-sous-item">
+                                        <span class="form-item-icon material-symbols-rounded">lock</span>
+                                        <input type="password" name="passwd_confirm" placeholder="Confirmez votre mot de passe">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-item-other">
+                                    <label for="signin"> <a href="index.php?action=signin">Vous avez déjà un compte ?</a></label>
+                                    <button type="submit">S'inscire</button>
+                                </div>
+                            </form>
+                        </div>
+                    </main>
             HTML;
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-            $passwd = filter_var($_POST['password']);
-            $passwd2 = filter_var($_POST['password2']);
+            $passwd = filter_var($_POST['passwd']);
+            $passwd2 = filter_var($_POST['passwd_confirm']);
             if($passwd != $passwd2){
                 $html = "<p>Les 2 mdp ne sont pas identiques</p>";
             }
