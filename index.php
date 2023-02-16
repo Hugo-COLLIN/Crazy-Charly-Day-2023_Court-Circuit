@@ -45,7 +45,7 @@ HTML;
 //L'affichage principale de l'index
 function ajouterIndex(string $html) : string {
     $code = <<<HTML
-    <html lang="">
+    <html lang="fr">
         <head>
             <meta charset="utf-8">
             <title>Court-circuit Nancy</title>
