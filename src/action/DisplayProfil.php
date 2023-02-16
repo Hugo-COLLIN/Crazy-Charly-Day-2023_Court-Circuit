@@ -31,12 +31,6 @@ class DisplayProfil extends Action
                     <br>
                     <br>
                     <button onclick="window.location.href='?action=modify-surname'">Changer votre pseudonyme</button>
-                    <br>
-                    <br>
-                    <button onclick="window.location.href='?action=modify-email'">Changer l'addresse mail</button>
-                    <br>
-                    <br>
-                    <button onclick="window.location.href='?action=modify-passwd'">Changer le mot de passe</button>
                     </div>
                 </div>
              </main>
