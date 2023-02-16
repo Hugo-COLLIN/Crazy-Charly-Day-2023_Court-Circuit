@@ -20,6 +20,7 @@ class ListeUtilsateursRenderer
             $res .= "<span class=\"material-symbols-rounded\">account_box</span> <span>{$row[3]}</span>";
             $res .= "<div class='desc-item-utilisateur'>";
             $res.="<h4>".$row[1]."</h4>";
+            $res.="<a href='index.php?action=infosUtilisateur&idUser={$row[0]}'>Détails</a>";
             //$res.="<div class='elt-item-utilisateur'>".$row[3]."</div>";
             $res .= "</div></div>";
         }
