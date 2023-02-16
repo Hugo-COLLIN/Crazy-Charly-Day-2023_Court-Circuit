@@ -19,6 +19,35 @@ class CatalogueAction extends Action {
                         <input name="chaine">
                         <button type="submit" id="search-item-validate">Validate</button>
                     </form>
+                    
+                                      
+                    <form action="?action=filtrer-catalogue" method="post">
+                <select name='lieu'>
+                    <option value="">Selectionner un lieu</option>
+                    <option value="Santeny">Santeny</option>
+                    <option value="Villeurbanne">Villeurbanne</option>
+                    <option value="Nancy">Nancy</option>
+                    <option value="Lucey">Lucey</option>
+                    <option value="Wiwersheim">Wiwersheim</option>
+                    <option value="Pont à Mousson">Pont à Mousson</option>
+                    <option value="Chauny">Chauny</option>
+                    <option value="Annecy">Annecy
+                    <option value="Les Pennes-Mirabeau">Les Pennes-Mirabeau</option>
+                    <option value="Leyr">Leyr</option>
+                    <option value="Sarralbe">Sarralbe</option>
+                    <option value="Goviller">Goviller</option>
+                </select>
+                
+                <select name='categorie'>
+                    <option value="">Selectionner une catégorie</option>
+                    <option value="Épicerie">Épicerie</option>
+                    <option value="Boissons">Boissons</option>
+                    <option value="Droguerie">Droguerie</option>
+                    <option value="Cosmétiques">Cosmétiques</option>
+                    <option value="Produits frais">Produits frais</option>
+                </select>
+                <input type='submit' value='filtrer'>
+            </form>
                 </div>
             END;
         $res.= '<div class="group-produit-catalogue">';
