@@ -19,10 +19,22 @@ class PanierAction extends Action{
             $quarry->bindParam(1, explode(":", $panier[$i])[0]);
             $quarry->execute();
             $p = $quarry->fetch();
-            $res.="<li>" .$p["nom"] ." : ".$p["prix"]. " qte : ".$qte."</li>";
+            $res.="<li>" .$p["nom"] ." : ".$p["prix"]. "€   qte : ".$qte." <button id='$i' onclick='supprimer($i)' type='submit'>supprimer</button></li>";
             $total += floatval($p["prix"])*floatval($qte);
         }
-        $res.=$total;
+        $res.=<<<HTML
+        <script>
+        function supprimer(i){
+            let b = document.getElementById(i);
+            let c = document.cookie.split(';')[0];
+            let t = c.split(",")[i];
+            c = c.replace("panier=", "")
+            document.cookie = "panier="+c.replace(','+t, "");
+            window.location.href = 'index.php?action=panier';
+        }
+        </script>
+        HTML;
+        $res.=$total . " €";
         return $res;
     }
 }

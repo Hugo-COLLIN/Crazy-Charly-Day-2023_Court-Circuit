@@ -10,7 +10,7 @@ use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\action\LogoutAction;
 use iutnc\ccd\action\SigninAction;
 use iutnc\ccd\action\FiltrerCatalogueAction;
-use iutnc\ccd\Header\Header;
+use iutnc\ccd\header\Header;
 
 class Dispatcher {
 
