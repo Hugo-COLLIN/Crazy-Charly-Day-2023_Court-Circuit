@@ -1,10 +1,10 @@
 {
-  "autoload": {
-    "psr-4": {
-      "iutnc\\ccd\\" : "src/"
+    "autoload": {
+        "psr-4": {
+            "iutnc\\ccd\\" : "src/"
+        }
+    },
+    "require": {
+        "ext-pdo": "*"
     }
-  },
-  "require": {
-    "ext-pdo": "*"
-  }
 }
