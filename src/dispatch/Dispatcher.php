@@ -2,10 +2,14 @@
 declare(strict_types=1);
 namespace iutnc\ccd\dispatch;
 
+use iutnc\ccd\action\DisplayProfil;
 use iutnc\ccd\action\ErrorAction;
 use iutnc\ccd\action\InfosUtilisateurAction;
 use iutnc\ccd\action\ListeCommandesAction;
 use iutnc\ccd\action\ListeUtilisateursAction;
+use iutnc\ccd\action\ModifyFirstNameAction;
+use iutnc\ccd\action\ModifyNameAction;
+use iutnc\ccd\action\ModifyPseudo;
 use iutnc\ccd\action\PanierAction;
 use iutnc\ccd\action\SelectionProduitAction;
 use iutnc\ccd\action\AddUserAction;
@@ -89,12 +93,19 @@ class Dispatcher {
                 break;
             case "activation":
                 $action = new ActivationAction($_GET['token']);
+                break;*/
+            case "modify-surname":
+                $action = new ModifyPseudo();
                 break;
-            case "profilmodif":
-                ProfilUpdate::update();*/
+            case "modify-firstname":
+                $action = new ModifyFirstNameAction();
+                break;
+            case "modify-name":
+                $action = new ModifyNameAction();
+                break;
             case "profil":
                 if (isset($_SESSION['user'])) {
-
+                    $action = new DisplayProfil();
                 } else {
                     header("Location:index.php?action=signin");
                     $action = new SigninAction();
@@ -114,7 +125,8 @@ class Dispatcher {
             $this->renderPage($action->execute());
         }
         catch (\Exception $e) {
-            header("Location:index.php");
+           // header("Location:index.php");
+            echo $e->getMessage();
         }
     }
 }
