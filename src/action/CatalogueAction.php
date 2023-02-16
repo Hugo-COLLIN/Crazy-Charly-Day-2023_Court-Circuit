@@ -3,11 +3,12 @@
 namespace iutnc\ccd\action;
 
 use iutnc\ccd\db\ConnectionFactory;
+use iutnc\ccd\Header\Header;
 
 class CatalogueAction extends Action {
 
     public function execute(): string{
-        $res = "<HTML>";
+        $res = "";
         $bd = ConnectionFactory::makeConnection();
         $rep = $bd->query("select * from produit");
         $res.= '<div style="margin: inherit;"><form action="?action=catalogue" method="post" class="search-form">

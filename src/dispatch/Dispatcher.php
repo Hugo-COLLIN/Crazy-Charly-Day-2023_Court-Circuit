@@ -7,6 +7,7 @@ use iutnc\ccd\action\AddUserAction;
 use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\action\LogoutAction;
 use iutnc\ccd\action\SigninAction;
+use iutnc\ccd\Header\Header;
 
 class Dispatcher {
 
@@ -14,7 +15,7 @@ class Dispatcher {
     }
 
     private function renderPage(string $html) : void {
-        $res = <<<HTML
+        $res = '
             <!DOCTYPE html>
             <html lang="fr">
                 <head>
@@ -22,14 +23,8 @@ class Dispatcher {
                     <title>Court Circuit</title>
                     <link rel="stylesheet" type="text/css" href="style.css">
                 </head>
-                <body>
-                    <div class="header">
-                        <a id="title" href="index.php">Court Circuit</a>
-                    </div>
-                    $html
-                </body>
-            </html>
-        HTML;
+                <body>'. Header::afficger() . $html.'</body>
+            </html>';
         echo $res;
     }
 
