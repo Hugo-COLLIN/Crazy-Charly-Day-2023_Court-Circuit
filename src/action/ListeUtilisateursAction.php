@@ -5,6 +5,7 @@ namespace iutnc\ccd\action;
 use iutnc\ccd\db\Commande;
 use iutnc\ccd\db\ConnectionFactory;
 use iutnc\ccd\Produit;
+use iutnc\ccd\render\InfosUtilsateurRenderer;
 use iutnc\ccd\render\ListeCommandesRenderer;
 use iutnc\ccd\render\ListeUtilsateursRenderer;
 

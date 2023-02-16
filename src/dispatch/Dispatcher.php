@@ -2,6 +2,7 @@
 
 namespace iutnc\ccd\dispatch;
 
+use iutnc\ccd\action\InfosUtilisateurAction;
 use iutnc\ccd\action\ListeCommandesAction;
 use iutnc\ccd\action\ListeUtilisateursAction;
 use iutnc\ccd\action\PanierAction;
@@ -15,6 +16,7 @@ use iutnc\ccd\action\CatalogueExecuteSearch;
 use iutnc\ccd\action\FiltrerCatalogueAction;
 use iutnc\ccd\header\Header;
 use iutnc\ccd\header\Html;
+use iutnc\ccd\render\InfosUtilsateurRenderer;
 
 class Dispatcher {
 
@@ -40,6 +42,12 @@ class Dispatcher {
             case "logout":
                 $action = new LogoutAction();
                 break;
+            case "listeUtilisateurs":
+                $action = new ListeUtilisateursAction();
+                break;
+            case "infosUtilisateur":
+                $action = new InfosUtilisateurAction($_GET['idUser']);
+                break;
             case "catalogue":
                 $classeTemp = new CatalogueSearchAction();
                 if(!isset($_POST['chaine'])){
@@ -56,9 +64,6 @@ class Dispatcher {
                 break;
             case "listeCommandes":
                 $action = new ListeCommandesAction();
-                break;
-            case "listeUtilisateurs":
-                $action = new ListeUtilisateursAction();
                 break;
                 /*
             case "continuerSerie":
