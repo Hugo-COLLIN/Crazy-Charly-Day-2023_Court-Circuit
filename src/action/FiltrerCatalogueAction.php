@@ -11,6 +11,10 @@ class FiltrerCatalogueAction extends Action{
 
     public function execute(): string{
         $res = "";
+        $res.= '<form action="?" method="get" class="search-form">
+                    <button type="submit" >Retour</button>
+                    <input type="hidden" name="action" value="catalogue">
+                    </form>';
         if ($this->http_method == 'POST') {
 
             $lieu= filter_var($_POST['lieu'],FILTER_SANITIZE_STRING);
