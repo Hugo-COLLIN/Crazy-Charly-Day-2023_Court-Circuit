@@ -55,19 +55,10 @@ class Produit
         let cookie = document.cookie.split(";")[2].split("=")[1];
         document.cookie = "panier="+cookie+",'.$id.':"+a[0].value;
         }
-        </script>';
-        $res .= "
-        <form method='post' action='?action=ajout-comm&id=" . $id . "' class='comment-form'>
-        <h2>Note</h2>
-        <select name='note'>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-        <option value='3'>3</option>
-        <option value='4'>4</option>
-        <option value='5'>5</option></select>
-        <h2>Commentaire</h2>
-        <textarea maxlength='520' name='commentaire' placeholder='Commentaire' required></textarea><br>
-        <button type='submit'>Envoyer</button></form><a href=?action=catalogue>Retour</a>";
+        </script><a href=?action=catalogue>Retour</a>';
+
+
+        $res.='<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d336163.39846476965!2d'.$row['longitude'].'!3d'.$row['latitude'].'!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1676583649510!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         return $res;
     }
 }
