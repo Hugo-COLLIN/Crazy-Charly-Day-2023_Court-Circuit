@@ -10,21 +10,23 @@ use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\action\LogoutAction;
 use iutnc\ccd\action\SigninAction;
 use iutnc\ccd\action\FiltrerCatalogueAction;
-use iutnc\ccd\Header\Header;
+use iutnc\ccd\Header\Html;
 
 class Dispatcher {
 
-    public function __construct() {
+    private string $action;
+    public function __construct(String $action) {
+        $this->action = $action;
     }
 
     private function renderPage(string $html) : void {
-        $res = Header::afficher() . $html.'</body>
+        $res = Html::afficherHtml() . Html::afficherHeader() . $html.'</body>
             </html>';
         echo $res;
     }
 
     public function run() : void {
-        switch ($_GET['action']) {
+        switch ($this->action) {
             case "signin":
                 $action = new SigninAction();
                 break;
@@ -74,21 +76,29 @@ class Dispatcher {
                 $action = new ActivationAction($_GET['token']);
                 break;
             case "profilmodif":
-                ProfilUpdate::update();
+                ProfilUpdate::update();*/
             case "profil":
-                $action = new ModifProfilAction();
-                break;*/
+                if (isset($_SESSION['user'])) {
+
+                } else {
+                    header("Location:index.php?action=signin");
+                    $action = new SigninAction();
+                }
+                break;
             case "panier":
                 $action = new PanierAction();
                 break;
             default:
-                echo "mauvaise 'action'";
+                echo 'error';
                 break;
         }
-        try {
-                $this->renderPage($action->execute());
+        if ($action == null) {
+            header("Location:index.php");
         }
-        catch (\Erro $e) {
+        try {
+            $this->renderPage($action->execute());
+        }
+        catch (\Exception $e) {
             header("Location:index.php");
         }
     }
