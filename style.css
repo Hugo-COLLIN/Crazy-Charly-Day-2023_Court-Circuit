@@ -3,182 +3,47 @@ body
     background-color: #252523;
 }
 
-.header
-{
-    background-image:linear-gradient(black, #252523);
-    margin: -8px;
-    margin-bottom: 20px;
+.material-symbols-rounded {
+     color: white;
+}
+
+.group-acceuil-right span {
+    position: relative;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: xx-large;
+}
+
+.nav-group-acceuil {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #252523;
+    width: 100%;
+}
+
+.group-acceuil-right {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+    justify-content: end;
 }
 
-#title
-{
+.group-acceuil-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     color: white;
-    font-family: 'Raleway', sans-serif;
-    font-size: 50px;
-    margin: 1%;
 }
 
-a
-{
+.group-acceuil-right .nav-acceuil-item-catalogue {
+    position: relative;
+    right: 4rem;
+    display: inherit;
+}
+
+.group-acceuil-right a {
     color: white;
-    font-family: Helvetica;
-    text-align: center;
-    font-size: 100%;
     text-decoration: none;
-    margin: 10px;
+    font-size: 0.8rem;
+    margin: 0 1rem;
 }
 
-#signup
-{
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px;
-}
-a:hover
-{
-    color: #cecece;
-}
 
-.main
-{
-    margin: 100px;
-    font-size: 120%;
-}
-
-.log-form
-{
-    margin-top: 3%;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    width: 30%;
-}
-
-.search-form
-{
-    margin: 1%;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    width: fit-content;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-.series
-{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.comment-form{
-    color: black;
-    font-family: Helvetica;
-    margin: 1%;
-    border-radius: 5px;
-    background-color: lightblue;
-    padding: 5px 20px 20px;
-    width: fit-content;
-}
-
-.serie
-{
-    width: 200px;
-    height: 50px;
-    display: block;
-}
-
-p
-{
-    color: white;
-    font-family: Verdana;
-    margin: 10px;
-}
-
-table
-{
-    border-collapse: collapse;
-}
-
-td
-{
-    border: 1px solid white;
-}
-
-.td-lien
-{
-    width: 90%;
-    font-weight: bold;
-}
-
-.episodes
-{
-    margin: 2%;
-}
-
-.description, .note, .commentaire
-{
-    background-color: #ff8903;
-    margin: 2% 5% 2% 2%;
-    border-radius: 10px;
-    padding: 1%;
-}
-
-.description>p, .note>p, .commentaire>p
-{
-    color: black;
-    font-weight: bold;
-}
-
-.video{
-    display: flex;
-    justify-content: center;
-}
-
-.video-div
-{
-    margin: 1%;
-}
-
-.img-video
-{
-    width: 200px;
-}
-
-.div-form-log
-{
-    display: flex;
-    justify-content: center;
-}
-
-.liste-serie>p>a
-{
-    text-decoration: underline;
-}

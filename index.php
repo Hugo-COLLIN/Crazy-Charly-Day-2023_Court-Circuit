@@ -15,14 +15,25 @@ if (isset($_SESSION['user'])) {
         $dispatcher->run();
     } else {
         $action = <<<HTML
-            <div class="header">
+            <header>
                 <a id="title" href=""> </a>
-                <div class="main">
-                    <a href="?action=logout">Se déconnecter</a>
-                    <a href="?action=catalogue">click and collect</a>
-                    <a href="?action=profil">Mon compte</a>
+                <div class="nav-group-acceuil">
+                    <div class="group-acceuil-center">
+                        <h2 id="page-name">Court-circuit Nancy</h2>
+                    </div>
+                    <div class="group-acceuil-right">
+                        <div class="nav-acceuil-item-catalogue">
+                            <a href="?action=catalogue" title="Click & collect"><span class="material-symbols-rounded">shopping_cart</span></a>
+                        </div>
+                        <div class="nav-acceuil-item-account">
+                            <a href="?action=profil" title="Mon compte"><span class="material-symbols-rounded">account_box</span></a>
+                        </div>
+                        <div class="nav-acceuil-item-logout">
+                            <a href="?action=logout" title="Se déconnecter"><span class="material-symbols-rounded">logout</span></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </header>
 HTML;
         $action.="<div class='liste-serie'>";
         $list = new ListeAction("listPref");
@@ -68,6 +79,7 @@ function ajouterIndex(string $html) : string {
             <title>Court-circuit Nancy</title>
             <link rel="stylesheet" type="text/css" href="style.css">
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
         </head>
         <body>
             $html
