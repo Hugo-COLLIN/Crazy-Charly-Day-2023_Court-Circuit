@@ -243,7 +243,8 @@ body
     height: 10rem;
 }
 
-.infos-utilisateur
+.utilisateurs,
+.commandes
 {
     max-width: 800px;
     margin: auto;
