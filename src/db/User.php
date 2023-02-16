@@ -33,8 +33,13 @@ class User
     }
 
 
+    public function getRole() : string
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $stmt = $bd->prepare("SELECT typeUser from userccd where login = '$this->email'");
+        $stmt->execute();
 
-
-
+        return $stmt->fetch()[0];
+    }
 
 }

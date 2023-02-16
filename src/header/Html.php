@@ -1,6 +1,8 @@
 <?php
 
 namespace iutnc\ccd\header;
+use iutnc\ccd\db\User;
+
 class Html
 {
 
@@ -22,14 +24,39 @@ class Html
 
     public static function afficherHeader()
     {
+        $admin = "";
         if (isset($_SESSION['user'])) {
             $connect = '<div class="nav-acceuil-item-logout">
                             <a href="?action=logout" title="Se déconnecter"><span class="material-symbols-rounded">logout</span></a>
                         </div>';
+            $u = unserialize($_SESSION['user']);
+            $role = $u->getRole();
+            if ($role == 'admin') {
+                $admin = '<div class="nav-acceuil-item-listeCommandes">
+                            <a href="?action=listeCommandes" title="Liste des commandes (Administrateur)"><span class="material-symbols-rounded">order_approve</span></a>
+                        </div>
+                        <div class="nav-acceuil-item-listeUtilisateurs">
+                            <a href="?action=listeUtilisateurs" title="Liste des utilisateurs (Administrateur)"><span class="material-symbols-rounded">group</span></a>
+                        </div>';
+            }
+/*
+            if ($row = $query->fetch()) {
+                if ($row[0] == 'admin') {
+                    $admin = '<div class="nav-acceuil-item-listeCommandes">
+                            <a href="?action=listeCommandes" title="Liste des commandes (Administrateur)"><span class="material-symbols-rounded">order_approve</span></a>
+                        </div>
+                        <div class="nav-acceuil-item-listeUtilisateurs">
+                            <a href="?action=listeUtilisateurs" title="Liste des utilisateurs (Administrateur)"><span class="material-symbols-rounded">group</span></a>
+                        </div>';
+                }
+            }*/
         }else {
             $connect = "";
         }
-        $html = '<header>
+
+
+        $html = <<<HTML
+                <header>
                 <div class="nav-group-acceuil">
                     <div class="group-acceuil-center">
                         <h2 id="page-name">Court-circuit Nancy</h2>
@@ -41,19 +68,15 @@ class Html
                         <div class="nav-acceuil-item-catalogue">
                             <a href="?action=panier" title="Panier"><span class="material-symbols-rounded">shopping_cart</span></a>
                         </div>
-                        <div class="nav-acceuil-item-listeCommandes">
-                            <a href="?action=listeCommandes" title="Liste des commandes (Administrateur)"><span class="material-symbols-rounded">order_approve</span></a>
-                        </div>
-                        <div class="nav-acceuil-item-listeUtilisateurs">
-                            <a href="?action=listeUtilisateurs" title="Liste des utilisateurs (Administrateur)"><span class="material-symbols-rounded">group</span></a>
-                        </div>
+                        $admin
                         <div class="nav-acceuil-item-account">
                             <a href="?action=profil" title="Mon compte"><span class="material-symbols-rounded">account_box</span></a>
                         </div>
-                        '. $connect . '
+                        $connect
                     </div>
                 </div>
-                </header>';
+                </header>
+                HTML;
         return $html;
     }
 
