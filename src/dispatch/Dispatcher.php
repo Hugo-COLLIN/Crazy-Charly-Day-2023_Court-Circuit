@@ -14,7 +14,7 @@ use iutnc\ccd\action\CatalogueSearchAction;
 use iutnc\ccd\action\CatalogueExecuteSearch;
 use iutnc\ccd\action\FiltrerCatalogueAction;
 use iutnc\ccd\header\Header;
-use iutnc\ccd\Header\Html;
+use iutnc\ccd\header\Html;
 
 class Dispatcher {
 

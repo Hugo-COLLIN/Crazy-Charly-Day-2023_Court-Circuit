@@ -38,7 +38,7 @@ class FiltrerCatalogueAction extends Action{
                 $stmt -> bindParam(1,$lieu);
                 $stmt -> bindParam(2,$categorie);
                 $stmt -> execute();
-                 $res.= '<div class="group-produit-catalogue">';
+                 $res.= '<main class="main-catalogue"><div class="group-produit-catalogue">';
                 while ($row = $stmt->fetch()){
                     $res.="<div class='item-produit-catalogue'>
                            <div class='img-item-catalogue'>

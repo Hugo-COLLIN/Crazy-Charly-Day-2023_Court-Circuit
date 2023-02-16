@@ -5,7 +5,7 @@ require_once "vendor/autoload.php";
 use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\db\ConnectionFactory;
 use iutnc\ccd\dispatch\Dispatcher;
-use iutnc\ccd\Header\Html;
+use iutnc\ccd\header\Html;
 
 session_start();
 ConnectionFactory::setConfig("DBConfig.ini");

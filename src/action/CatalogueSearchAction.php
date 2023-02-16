@@ -20,7 +20,7 @@ class CatalogueSearchAction extends CatalogueAction
                     <button type="submit" >Retour</button>
                     <input type="hidden" name="action" value="catalogue">
                     </form>';
-            $res.= '<div class="group-produit-catalogue">';
+            $res.= '<main class="main-catalogue"><div class="group-produit-catalogue">';
             $stmt -> execute();
             while ($row = $stmt->fetch()){
                 $res.="<div class='item-produit-catalogue'>
