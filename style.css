@@ -109,11 +109,6 @@ body
     box-shadow: 1px 1px 10px -3px black;
 }
 
-.main-catalogue .search-group-catalogue button:hover {
-    font-size: 1.1rem;
-    border: 2px solid #ffffff;
-}
-
 .main-catalogue .search-group-catalogue button:focus {
     font-size: 0.9rem;
 }
@@ -129,6 +124,7 @@ body
 
 .main-catalogue .catalogue-page button {
     display: flex;
+    padding: 0 0.5rem 0 0.5rem;
     border: 1px solid black;
     border-radius: 10px;
     background-color: #454542;
@@ -245,10 +241,12 @@ body
 }
 
 .utilisateurs,
-.commandes
+.commandes,
+.error
 {
     max-width: 800px;
     margin: auto;
+    padding-top: 1rem;
 }
 
 /**
@@ -439,4 +437,12 @@ main .double-form-sous-item input {
 
 header .hidden{
     display: none;
+}
+
+select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: left;
+    color: black;
 }

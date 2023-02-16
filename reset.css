@@ -205,7 +205,6 @@ img {
 button,
 input,
 optgroup,
-select,
 textarea {
     font-family: inherit;
     font-size: 100%;
@@ -219,9 +218,6 @@ input {
 }
 
 button,
-select {
-    text-transform: none;
-}
 
 button,
 [type="button"],
