@@ -18,7 +18,7 @@ class InfosUtilisateurAction extends Action
         $this->id = $id;
     }
 
-    public function execute(): string
+    public function execute(): String
     {
         return InfosUtilsateurRenderer::render($this->id);
     }
