@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace iutnc\ccd\dispatch;
 
+use iutnc\ccd\action\AjouterCommande;
 use iutnc\ccd\action\DisplayProfil;
 use iutnc\ccd\action\ErrorAction;
 use iutnc\ccd\action\InfosUtilisateurAction;
@@ -73,6 +74,11 @@ class Dispatcher {
             case "listeCommandes":
                 $action = new ListeCommandesAction();
                 break;
+            case "validerPanier":
+                AjouterCommande::ajouter();
+                $action = new AjouterCommande();
+                break;
+
                 /*
             case "continuerSerie":
                 $action = new SelectionSerieAction($_GET['id']);
@@ -127,6 +133,8 @@ class Dispatcher {
         catch (\Exception $e) {
            // header("Location:index.php");
             echo $e->getMessage();
+            var_dump($e);
+            //header("Location:index.php");
         }
     }
 }
