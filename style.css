@@ -245,10 +245,12 @@ body
 }
 
 .utilisateurs,
-.commandes
+.commandes,
+.error
 {
     max-width: 800px;
     margin: auto;
+    padding-top: 1rem;
 }
 
 /**
