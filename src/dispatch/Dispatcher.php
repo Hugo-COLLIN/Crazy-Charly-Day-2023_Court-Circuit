@@ -51,17 +51,17 @@ class Dispatcher {
                 break;
             case "logout":
                 $action = new LogoutAction();
-                break;/*
+                break;
             case "catalogue":
-                $classeTemp = new CatalogueSearchAction();
+                /*$classeTemp = new CatalogueSearchAction();
                 if(!isset($_POST['chaine'])){
                     $_POST['chaine'] =  "";
                 }
                 $action = new CatalogueExecuteSearch($classeTemp, filter_var($_POST['chaine'], FILTER_SANITIZE_STRING));
-                $_POST['chaine'] =  "";
-                //$action = new CatalogueAction();
+                $_POST['chaine'] =  "";*/
+                $action = new CatalogueAction();
                 break;
-            case "serie":
+            /*case "serie":
                 $action = new SelectionSerieAction($_GET['id'], true);
                 break;
             case "continuerSerie":

@@ -67,10 +67,12 @@ function ajouterIndex(string $html) : string {
             <meta charset="utf-8">
             <title>Court-circuit Nancy</title>
             <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         </head>
         <body>
             $html
         </body>
+        <script src="js/bootstrap.min.js"></script>
     </html>
     HTML;
     return $code;
