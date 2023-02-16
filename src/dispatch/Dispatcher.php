@@ -2,6 +2,7 @@
 
 namespace iutnc\ccd\dispatch;
 
+use iutnc\ccd\action\ListeCommandesAction;
 use iutnc\ccd\action\SelectionProduitAction;
 use iutnc\ccd\action\AddUserAction;
 use iutnc\ccd\action\CatalogueAction;
@@ -54,7 +55,11 @@ class Dispatcher {
                 break;
             case "filtrer-catalogue" :
                 $action = new FiltrerCatalogueAction();
-                break;/*
+                break;
+            case "listeCommandes":
+                $action = new ListeCommandesAction();
+                break;
+                /*
             case "continuerSerie":
                 $action = new SelectionSerieAction($_GET['id']);
                 break;
