@@ -16,11 +16,11 @@ if (isset($_SESSION['user'])) {
     } else {
         $action = <<<HTML
             <div class="header">
-                <a id="title" href="">NetVOD</a>
+                <a id="title" href=""> </a>
                 <div class="main">
                     <a href="?action=logout">Se déconnecter</a>
-                    <a href="?action=catalogue">Catalogue</a>
-                    <a href="?action=profil">Profil</a>
+                    <a href="?action=catalogue">click and collact</a>
+                    <a href="?action=profil">Mon compte</a>
                 </div>
             </div>
 HTML;
@@ -48,7 +48,7 @@ else {
     } else {
         $action = <<<HTML
             <div class="header">
-                <a id="title" href="">NetVOD</a>
+                <a id="title" href="">Court-circuit Nancy</a>
                 <div class="main">
                     <a id="signin" href="?action=signin">Se connecter</a>
                     <a id="signup" href="?action=add-user">S'inscrire</a>
@@ -65,7 +65,7 @@ function ajouterIndex(string $html) : string {
     <html lang="">
         <head>
             <meta charset="utf-8">
-            <title>NetVOD</title>
+            <title>Court-circuit Nancy</title>
             <link rel="stylesheet" type="text/css" href="style.css">
         </head>
         <body>
