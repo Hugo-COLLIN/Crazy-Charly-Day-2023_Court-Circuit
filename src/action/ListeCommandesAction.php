@@ -5,6 +5,7 @@ namespace iutnc\ccd\action;
 use iutnc\ccd\db\Commande;
 use iutnc\ccd\db\ConnectionFactory;
 use iutnc\ccd\Produit;
+use iutnc\ccd\render\ErrorRenderer;
 use iutnc\ccd\render\ListeCommandesRenderer;
 
 class ListeCommandesAction extends Action
@@ -18,6 +19,9 @@ class ListeCommandesAction extends Action
 
     public function execute(): string
     {
-        return ListeCommandesRenderer::render();
+        if (isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == 'admin')
+            return ListeCommandesRenderer::render();
+        else
+            return ErrorRenderer::render();
     }
 }
