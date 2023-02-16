@@ -10,16 +10,17 @@ class InfosUtilsateurRenderer
     {
         $res = "";
         $res .= "<div class=\"utilisateurs\">";
-        $res .= "<h1>Liste des utilisateurs</h1>";
+        $res .= "<h1>Détails de l'utilisateurs</h1>";
 
 
         $query = Utilisateur::recupererUtilisateur($id);
         if ($row = $query->fetch())
         {
             $res.= "<section class=\"infos-utilisateur\">";
-            $res .= "<p class='item-utilisateur'>{$row[1]}</p>";
-            $res .= "<p class='item-utilisateur'>{$row[2]}</p>";
-            $res .= "<p class='item-utilisateur'>{$row[3]}</p>";
+            $res .= "<span class=\"material-symbols-rounded\">account_box</span>{$row[3]}";
+            $res .= "<h4>{$row[5]} {$row[6]}</h4>";
+            $res .= "<p class=''>@{$row[7]}</p>";
+            $res .= "<p class=''>{$row[1]}</p>";
             $res.= "</section>";
             $res .= "</div>";
         }
