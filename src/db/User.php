@@ -28,7 +28,7 @@ class User
 
     public function getID() : int{
         $bd = ConnectionFactory::makeConnection();
-        $stmt = $bd->prepare("SELECT id from userccd where email = $this->email");
+        $stmt = $bd->prepare("SELECT id from userccd where login = '$this->email'");
         return $stmt->execute()->fetch();
     }
 
