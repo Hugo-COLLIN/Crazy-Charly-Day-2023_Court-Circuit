@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\ccd\produit;
+namespace iutnc\ccd;
 
 use iutnc\ccd\db\ConnectionFactory;
 use PDOException;
@@ -22,9 +22,9 @@ class Produit
         }else{
             $res .= "prix : " . $row[3] . " poids :". "$row[4]";
         }
-        $res .= "</p><p>description : " . $row[5] . "</p><p>Detail : " . $row[6] . "</div></p><p>Leux de production : " . $row[7] . "</p><p>Distance de Nancy : " . $row[8] . " coordonnees : ".$row[9].$row[10].$row[11]."</div>";
+        $res .= "</p><p>description : " . $row[5] . "</p><p>Detail : " . $row[6] . "</div></p><p>Lieux de production : " . $row[7] . "</p><p>Distance de Nancy : " . $row[8] . "km   coordonnees : ".$row[9]." ".$row[10]."</div>";
 
-        $res .= '<img src="img/'.$row[12].'">';
+        $res .= '<br><div class="immage-produit"><img src="img/'.$row[11].'"></div></br>';
         $res .= "
         <form method='post' action='?action=ajout-comm&id=" . $id . "' class='comment-form'>
         <h2>Note</h2>
@@ -36,7 +36,7 @@ class Produit
         <option value='5'>5</option></select>
         <h2>Commentaire</h2>
         <textarea maxlength='520' name='commentaire' placeholder='Commentaire' required></textarea><br>
-        <button type='submit'>Envoyer</button></form><a href=?action=produit&id=" . $id . ">Retour</a>";
+        <button type='submit'>Envoyer</button></form><a href=?action=catalogue>Retour</a>";
         return $res;
     }
 }

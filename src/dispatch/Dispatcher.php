@@ -2,19 +2,11 @@
 
 namespace iutnc\ccd\dispatch;
 
-/*use iutnc\ccd\action\ActivationAction;*/
+use iutnc\ccd\action\SelectionProduitAction;
 use iutnc\ccd\action\AddUserAction;
-/*use iutnc\ccd\action\AjoutCommentaireAction;
-use iutnc\ccd\action\CatalogueExecuteSearch;
-use iutnc\ccd\action\CatalogueSearchAction;*/
+use iutnc\ccd\action\CatalogueAction;
 use iutnc\ccd\action\LogoutAction;
-/*use iutnc\ccd\action\ModifProfilAction;
-use iutnc\ccd\action\SelectionEpisodeAction;
-use iutnc\ccd\action\SelectionSerieAction;*/
 use iutnc\ccd\action\SigninAction;
-/*use iutnc\ccd\baseChange\AjouterPref;
-use iutnc\ccd\baseChange\ProfilUpdate;
-use iutnc\ccd\baseChange\SupprimerPref;*/
 
 class Dispatcher {
 
@@ -61,9 +53,9 @@ class Dispatcher {
                 $_POST['chaine'] =  "";*/
                 $action = new CatalogueAction();
                 break;
-            /*case "serie":
-                $action = new SelectionSerieAction($_GET['id'], true);
-                break;
+            case "produit":
+                $action = new SelectionProduitAction($_GET['id']);
+                break;/*
             case "continuerSerie":
                 $action = new SelectionSerieAction($_GET['id']);
                 break;
