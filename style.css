@@ -385,3 +385,7 @@ main .double-form-sous-item input {
     transition: background-color 0.5s;
     animation: ease 0.5s growUp;
 }
+
+header .hidden{
+    display: none;
+}

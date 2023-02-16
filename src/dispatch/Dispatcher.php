@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace iutnc\ccd\dispatch;
 
+use iutnc\ccd\action\ErrorAction;
 use iutnc\ccd\action\InfosUtilisateurAction;
 use iutnc\ccd\action\ListeCommandesAction;
 use iutnc\ccd\action\ListeUtilisateursAction;
@@ -46,7 +47,10 @@ class Dispatcher {
                 $action = new ListeUtilisateursAction();
                 break;
             case "infosUtilisateur":
-                $action = new InfosUtilisateurAction($_GET['idUser']);
+                if (isset($_GET['idUser']))
+                    $action = new InfosUtilisateurAction($_GET['idUser']);
+                else
+                    $action = new ErrorAction();
                 break;
             case "catalogue":
                 $classeTemp = new CatalogueSearchAction();
