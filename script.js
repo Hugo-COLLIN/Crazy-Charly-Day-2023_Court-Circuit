@@ -13,6 +13,7 @@ window.addEventListener("load", function () {
 
 document.querySelector(".catalogue-page").addEventListener("click", function (e) {
     let cataloguePageButton = e.target
+    if (cataloguePageButton.classList.contains("catalogue-page")) return;
     removeHidden();
     hide(cataloguePageButton.textContent);
 });

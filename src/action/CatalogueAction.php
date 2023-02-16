@@ -8,9 +8,8 @@ use iutnc\ccd\Header\Html;
 class CatalogueAction extends Action {
 
     public function execute(): string{
-        $res = "";
 
-        $res.= <<<END
+        $res = <<<END
             <main class="main-catalogue">
                 <div class="search-group-catalogue">
                     <form action="?action=catalogue" method="post" class="search-form">
