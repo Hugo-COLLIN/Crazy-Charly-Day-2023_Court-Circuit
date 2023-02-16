@@ -5,6 +5,7 @@ namespace iutnc\ccd\action;
 use iutnc\ccd\db\Commande;
 use iutnc\ccd\db\ConnectionFactory;
 use iutnc\ccd\Produit;
+use iutnc\ccd\render\ErrorRenderer;
 use iutnc\ccd\render\InfosUtilsateurRenderer;
 use iutnc\ccd\render\ListeCommandesRenderer;
 use iutnc\ccd\render\ListeUtilsateursRenderer;
@@ -20,6 +21,9 @@ class InfosUtilisateurAction extends Action
 
     public function execute(): String
     {
-        return InfosUtilsateurRenderer::render($this->id);
+        if (isset($_SESSION['user']) && unserialize($_SESSION['user'])->getRole() == 'admin')
+            return InfosUtilsateurRenderer::render($this->id);
+        else
+            return ErrorRenderer::render();
     }
 }

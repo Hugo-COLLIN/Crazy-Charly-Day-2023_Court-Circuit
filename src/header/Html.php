@@ -39,17 +39,6 @@ class Html
                             <a href="?action=listeUtilisateurs" title="Liste des utilisateurs (Administrateur)"><span class="material-symbols-rounded">group</span></a>
                         </div>';
             }
-/*
-            if ($row = $query->fetch()) {
-                if ($row[0] == 'admin') {
-                    $admin = '<div class="nav-acceuil-item-listeCommandes">
-                            <a href="?action=listeCommandes" title="Liste des commandes (Administrateur)"><span class="material-symbols-rounded">order_approve</span></a>
-                        </div>
-                        <div class="nav-acceuil-item-listeUtilisateurs">
-                            <a href="?action=listeUtilisateurs" title="Liste des utilisateurs (Administrateur)"><span class="material-symbols-rounded">group</span></a>
-                        </div>';
-                }
-            }*/
         }else {
             $connect = "";
         }
