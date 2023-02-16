@@ -67,6 +67,52 @@ main .search-group-catalogue {
     box-shadow: 2px 2px 10px -5px black;
 }
 
+main .search-group-catalogue .material-symbols-rounded {
+    position: relative;
+    right: 13.5rem;
+    top: 0.3rem;
+    color: black;
+}
+
+main .search-group-catalogue input {
+    padding-left: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 10px -3px black;
+}
+
+main .search-group-catalogue input:focus {
+    box-shadow: 1px 1px 6px black;
+}
+
+main .search-group-catalogue button {
+    position: relative;
+    bottom: 0.2rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #454542;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 1px 1px 10px -3px black;
+}
+
+main .search-group-catalogue button:hover {
+    font-size: 1.1rem;
+    border: 2px solid #ffffff;
+}
+
+main .search-group-catalogue button:focus {
+    font-size: 0.9rem;
+}
+
+/**
+    * Catalogue
+ */
+
 main .group-produit-catalogue {
     display: grid;
     width: 95%;
@@ -90,7 +136,7 @@ main .img-item-catalogue {
 
 main .item-produit-catalogue {
     display: inline-flex;
-    height: 20rem;
+    height: 25rem;
     flex-direction: column;
     border-radius: 10px;
     margin: 1rem;

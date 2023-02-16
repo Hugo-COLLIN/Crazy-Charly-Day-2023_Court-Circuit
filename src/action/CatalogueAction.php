@@ -15,9 +15,9 @@ class CatalogueAction extends Action {
             <main>
                 <div class="search-group-catalogue">
                     <form action="?action=catalogue" method="post" class="search-form">
-                        <label id="search-item-label">Rechercher </label>
-                        <input name="chaine">
-                        <button type="submit" id="search-item-validate">Validate</button>
+                        <input name="chaine" placeholder="Recherchez un article">
+                        <span class="material-symbols-rounded">search</span>
+                        <button type="submit" id="search-item-validate">Valider</button>
                     </form>
                 </div>
             END;
@@ -31,6 +31,7 @@ class CatalogueAction extends Action {
                         </div>
                         <a class=\"group-produit\" href=?action=produit&id=".$row[0].">
                             ".$row[2]."
+                            <p>Prix : $row[3]€</p>
                         </a>
                     </div>";
         }
