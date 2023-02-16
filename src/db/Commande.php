@@ -33,8 +33,12 @@ class Commande
         $query->execute();
         $res .= "<div class='item-produit-commande'>";
         while ($row = $query->fetch()){
+            $res .= "<img src='image/".$row[11]."' alt='image produit' class='elt-item-commande'>";
+            $res .= "<div class='desc-item-commande'>";
             $res.="<h5 class='elt-item-commande'>".$row[2]."</h5>";
             $res .= "<div class='elt-item-commande'>Prix : ".$row[3]."€</div>";
+            $res .= "<div class='elt-item-commande'>Quantité : ".$row[14]."</div>";
+            $res .= "</div>";
         }
         $res .= "</div>";
         return $res;
