@@ -13,9 +13,10 @@ window.addEventListener("load", function () {
 
 document.querySelector(".catalogue-page").addEventListener("click", function (e) {
     let cataloguePageButton = e.target
-    if (cataloguePageButton.classList.contains("catalogue-page")) return;
-    removeHidden();
-    hide(cataloguePageButton.textContent);
+    if (!cataloguePageButton.classList.contains("catalogue-page")) {
+        removeHidden();
+        hide(cataloguePageButton.textContent);
+    }
 });
 
 function removeHidden() {
